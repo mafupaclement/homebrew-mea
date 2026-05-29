@@ -1,30 +1,20 @@
 # typed: false
 # frozen_string_literal: true
 
-# Homebrew formula pour MEA Local Agent.
-#
-# Dépôt tap : https://github.com/mafupaclement/homebrew-mea
-# Créez le dépôt `mafupaclement/homebrew-mea`, placez ce fichier dans
-# `Formula/mea-agent.rb`, puis mettez à jour les sha256 après chaque release.
-#
-# Mise à jour automatique des sha256 après une release :
-#   brew bump-formula-pr mafupaclement/mea/mea-agent --version=<new-version>
-
 class MeaAgent < Formula
   desc "MEA Local Agent — numérisation et mise en attente de fichiers pour MEA"
   homepage "https://mearchiver.com"
+  version "0.0.0"
   license "Proprietary"
 
   on_macos do
     on_arm do
-      url "https://github.com/mafupaclement/My-Electronic-Archiver/releases/latest/download/MEA-LocalAgent-osx-arm64.tar.gz"
-      # Mettre à jour après chaque release :
-      # sha256 "<sha256-osx-arm64>"
+      url "https://github.com/mafupaclement/My-Electronic-Archiver/releases/download/v0.0.0/MEA-LocalAgent-osx-arm64.tar.gz"
+      sha256 "0000000000000000000000000000000000000000000000000000000000000000"
     end
     on_intel do
-      url "https://github.com/mafupaclement/My-Electronic-Archiver/releases/latest/download/MEA-LocalAgent-osx-x64.tar.gz"
-      # Mettre à jour après chaque release :
-      # sha256 "<sha256-osx-x64>"
+      url "https://github.com/mafupaclement/My-Electronic-Archiver/releases/download/v0.0.0/MEA-LocalAgent-osx-x64.tar.gz"
+      sha256 "0000000000000000000000000000000000000000000000000000000000000000"
     end
   end
 
