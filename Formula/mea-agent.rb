@@ -4,17 +4,17 @@
 class MeaAgent < Formula
   desc "MEA Local Agent — numérisation et mise en attente de fichiers pour MEA"
   homepage "https://mearchiver.com"
-  version "1.0.4"
+  version "1.0.5"
   license "Proprietary"
 
   on_macos do
     on_arm do
       url "https://mearchiver-downloads.s3.eu-west-3.amazonaws.com/latest/MEA-LocalAgent-osx-arm64.tar.gz"
-      sha256 "441c4320dfc87ae2ff3a5cbfd9f65da0805b2958a211adf915c740272e947fd9"
+      sha256 "bc62eb13fbe57e85964ec4d608b5a6600bbb9b69676f2f32113526b15f138fe1"
     end
     on_intel do
       url "https://mearchiver-downloads.s3.eu-west-3.amazonaws.com/latest/MEA-LocalAgent-osx-x64.tar.gz"
-      sha256 "a1eb7b0cbe0f7ddb5de785e599287cf2851cee8619014cf8536a2d34e22c3895"
+      sha256 "0c66a3ea1edf38508f47a957e1bfaa62c816d36b12e0851ea6923f959dd63cf0"
     end
   end
 
