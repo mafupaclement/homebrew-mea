@@ -23,6 +23,9 @@ class MeaAgent < Formula
   def install
     bin.install "Mea.LocalAgent" => "mea-agent"
     (share/"mea-agent").install "install.sh", "uninstall.sh"
+    # Confiance HTTPS du serveur on-prem (hosts + cert) — brew ne peut pas l'exécuter
+    # à l'install (pas de sudo), on l'expose donc en commande à lancer une fois.
+    bin.install "configure-server-trust.sh" => "mea-agent-trust"
   end
 
   service do
@@ -48,6 +51,12 @@ class MeaAgent < Formula
 
       Vérifier :
         curl -s http://127.0.0.1:8100/health
+
+      Serveur MEA on-prem (HTTPS) — faire confiance au certificat du serveur (sudo) :
+        • avec IP (le nom est aussi ajouté à /etc/hosts) :  mea-agent-trust <ip-serveur>
+        • en mode DNS (mearchiver.local résout déjà)     :  mea-agent-trust
+      Dans les deux cas la commande importe le certificat du serveur ; sans IP elle
+      saute seulement l'étape /etc/hosts (la confiance du cert reste nécessaire).
     EOS
   end
 end
